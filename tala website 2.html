@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website - Crystal Amano Rosales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Light Pink Theme */
+        :root {
+            --primary-pink: #f8c8dc;
+            --pink-hover: #f4a8c8;
+            --dark-pink: #e695c3;
+            --light-bg: #fdf2f8;
+            --text-dark: #2d1b3f;
+            --text-light: #6b4e71;
+            --white: #ffffff;
+            --shadow: 0 8px 32px rgba(248, 200, 220, 0.3);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-pink), var(--pink-hover));
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: var(--dark-pink);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--dark-pink));
+            border-radius: 2px;
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, var(--light-bg), var(--primary-pink));
+            text-align: center;
+            min-height: 100vh;
+        }
+
+
+.profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--white);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .welcome-text {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .name-highlight {
+            color: var(--dark-pink);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Personal Info */
+        #personal-info {
+            background: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--primary-pink);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-card h3 {
+            color: var(--dark-pink);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Education Background */
+        #education {
+            background: linear-gradient(135deg, var(--primary-pink), var(--light-bg));
+        }
+		
+		
+        .timeline {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--dark-pink);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+        }
+
+        .timeline-content {
+            width: 48%;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+		
+		
+		.timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 4%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 4%;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--dark-pink);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, var(--primary-pink), var(--pink-hover));
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-progress {
+            background: var(--white);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--dark-pink), var(--primary-pink));
+            border-radius: 5px;
+            transition: width 2s ease;
+        }
+
+        /* Gallery */
+        #gallery {
+            background: linear-gradient(135deg, var(--light-bg), var(--primary-pink));
+        }
+
+        .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+        .gallery-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 4px solid white;
+}
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item::before {
+            content: '📸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+		.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Contact */
+        #contact {
+            background: var(--white);
+        }
+
+        .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--dark-pink);
+        }
+
+        .contact-form {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--dark-pink);
+            box-shadow: 0 0 0 3px rgba(230, 149, 195, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--dark-pink), var(--primary-pink));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+		
+		
+		/* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin: 1rem 0 !important;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .skills-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-pink), var(--dark-pink));
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dark);
+        }
+		/* Education Timeline Improvements */
+
+.timeline-content {
+    width: 42%;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 8px solid var(--dark-pink);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.timeline-content h3 {
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.timeline-content strong {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+}
+
+.timeline-content em {
+    color: var(--dark-pink);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.timeline-dot {
+    width: 22px;
+    height: 22px;
+    background: var(--dark-pink);
+    border: 4px solid var(--white);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(230, 149, 195, 0.5);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        var(--primary-pink),
+        var(--dark-pink)
+    );
+    border-radius: 10px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start !important;
+        padding-left: 50px;
+    }
+
+    .timeline-content {
+        width: 100%;
+        margin: 1rem 0 !important;
+    }
+}
+
+/* Education Grid Style */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.education-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 8px solid var(--dark-pink);
+    transition: 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+}
+
+.education-card h3 {
+    color: var(--dark-pink);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.education-card p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Crystal Amano Rosales</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#personal-info">Personal Info</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h1 class="section-title">Welcome</h1>
+            <div class="profile-container">
+                <img src="image3/6.jpg" alt="Crystal Amano Rosales" class="profile-img">
+                <div>
+                    <h2>Hi, I'm <span class="name-highlight">Crystal Amano Rosales</span></h2>
+                    <p class="welcome-text">A first year college student from Eastern Visayas State University. Welcome to my personal website where you can learn more about me.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Info Section -->
+    <section id="personal-info">
+        <div class="container">
+            <h1 class="section-title">Personal Information</h1>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>👤 Basic Info</h3>
+                    <p><strong>Name:</strong> Crystal Amano Rosales</p>
+                    <p><strong>Age:</strong> 18 years old</p>
+                    <p><strong>Birthday:</strong> September 15, 2007</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p>West Visoria, Carigara, Leyte</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎾 Hobbies</h3>
+                    <ul style="list-style: none;">
+                        <li>✨ Playing badminton</li>
+                        <li>📱 Watching TikTok videos</li>
+                        <li>📚 Reading books</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Background -->
+<!-- Education Section -->
+<section id="education">
+    <div class="container">
+
+        <h1 class="section-title">Educational Background</h1>
+
+        <div class="education-grid">
+
+            <div class="education-card">
+                <h3>🏫 College</h3>
+                <p><b>Eastern Visayas State University - Carigara Campus</b></p>
+                <p><b>Course:</b> Bachelor of Science in Information Technology</p>
+                <p><b>Location:</b> Brgy. Barugohay Norte, Carigara, Leyte</p>
+                <p><b>School Year:</b> 2025 - Present</p>
+            </div>
+
+            <div class="education-card">
+                <h3>🎓 Senior High School</h3>
+                <p><b>Carigara National High School</b></p>
+                <p><b>Location:</b> Brgy. Ponong, Carigara, Leyte</p>
+                <p><b>School Year:</b> 2023 - 2025</p>
+            </div>
+
+            <div class="education-card">
+                <h3>🏫 Junior High School</h3>
+                <p><b>Carigara National High School</b></p>
+                <p><b>Location:</b> Brgy. Ponong, Carigara, Leyte</p>
+                <p><b>School Year:</b> 2019 - 2023</p>
+            </div>
+
+            <div class="education-card">
+                <h3>📚 Elementary</h3>
+                <p><b>Cassidy Elementary School</b></p>
+                <p><b>Location:</b> Brgy. Ponong, Carigara, Leyte</p>
+                <p><b>School Year:</b> 2013 - 2019</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h1 class="section-title">Skills & Talents</h1>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎾</div>
+                    <h3>Badminton</h3>
+                    <p>I enjoy playing badminton and staying active</p>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Computer Skills</h3>
+                    <p>Basic computer skills and quick learner</p>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💬</div>
+                    <h3>Communication</h3>
+                    <p>Good communication skills</p>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Teamwork</h3>
+                    <p>Ability to work well with others</p>
+                    <div class="skill-progress">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <!-- Gallery Section -->
+    <<section id="gallery">
+    <div class="container">
+        <h1 class="section-title">Gallery</h1>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="image3/8.jpg" alt="Gallery Image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image3/2.jpg" alt="Gallery Image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image3/3.jpg" alt="Gallery Image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image3/4.jpg" alt="Gallery Image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image3/5.jpg" alt="Gallery Image">
+            </div>
+
+            <div class="gallery-item">
+                <img src="image3/7.jpg" alt="Gallery Image">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h1 class="section-title">Get In Touch</h1>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div>📱</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>09505246708</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>✉️</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>crystalrosales2007@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>📍</div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>West Visoria, Carigara, Leyte</p>
+                        </div>
+                    </div>
+                </div>
+                
+</section>
+    <footer>
+        <p>&copy; 2025 Crystal Amano Rosales. </p>
+    </footer>
+</body>
+</html>
